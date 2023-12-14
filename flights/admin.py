@@ -5,8 +5,10 @@ from .models import Flight, Airport
 
 @admin.register(Flight)
 class FlightAdmin(admin.ModelAdmin):
-    pass
+    autocomplete_fields = ['origin']
 
 @admin.register(Airport)
 class FlightAdmin(admin.ModelAdmin):
-    pass
+    list_display = ["name","No","city","phone_number"]
+    search_fields = ["name",]
+    list_filter = ['name','city']
